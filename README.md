@@ -1,5 +1,5 @@
 # grupo3
-javier5598
+javier5598 y Arendar
 
 ## Funcionalidad Mínima
 Usuario: fminima@gmail.com
