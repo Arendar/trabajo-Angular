@@ -1,4 +1,5 @@
 var myHeaders = new Headers();
+var data = sessionStorage.getItem('token');
 myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MjAxNjdmODY1ZDJmNGI0NjUxOWMxZDgiLCJpYXQiOjE2NDYxNDkwOTksImV4cCI6MTY0NjE2MzQ5OX0.12NXr4AM15EpLTGG9fcIzVERKsGaOVdMydtwdEXyxcc");
 
 var requestOptions = {
