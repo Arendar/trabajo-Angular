@@ -25,7 +25,7 @@ fetch("https://labinfsoft.herokuapp.com/api/videos?limite=10&desde=0", requestOp
 
 var videos = result.total;
 
-document.body.onload = muestravideos
+document.body.onload = muestravideos;
 
 function muestravideos() {
  for (let i = 0; i < videos; i++) { //n debería recorrer toda la petición json

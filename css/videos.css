@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%; 
+  color: white;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #fffbfb;
+  background-image: url("../img/cine.jpg");
+}
+
+#cat{
+    background-color: #004a10;
+    border-radius: 10cm;
+    border-style: dotted;
+    border-color: #4a1023;
+}
+
+.categoria{
+    background-color: violet;
+    border-radius: 10cm;
+    border-style: dotted;
+    border-color: #fd0e35;
+}
