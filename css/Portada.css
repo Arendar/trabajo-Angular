@@ -6,10 +6,9 @@ body {
 body {
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #fffbfb;
-  background-image: url("../img/cine.jpg");
+  background-image: url("/grupo3/img/Fondo.jpg");
+  background-repeat: no-repeat;
+ background-size:cover
 }
 
 .form-signin {
