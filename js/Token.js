@@ -21,4 +21,8 @@
       .then(response => response.json())
       .then(result => sessionStorage.setItem("token", result.token))
       .catch(error => console.log('error', error));
+
+      if(sessionStorage.getItem("token") !=null){
+        window.location.replace("pagina_muestra_videos.html");
+      }
   }

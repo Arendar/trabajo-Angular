@@ -6,9 +6,9 @@ body {
 body {
   display: flex;
   align-items: center;
-  background-image: url("/grupo3/img/Fondo.jpg");
+  background-image: url("../img/Fondo.jpg");
   background-repeat: no-repeat;
- background-size:cover
+  background-size:cover;
 }
 
 .form-signin {
@@ -38,4 +38,27 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  width: 170%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.py-3 {
+  background-color: white;;
+  padding-top: 1rem!important;
+  padding-bottom: 1rem!important;
+}
+
+.my-4 {
+  margin-top: 1.5rem!important;
+  margin-bottom: 1.5rem!important;
+}
+
+footer > p{
+  position:relative;
 }
