@@ -26,3 +26,4 @@
         window.location.replace("pagina_muestra_videos.html");
       }
   }
+  
