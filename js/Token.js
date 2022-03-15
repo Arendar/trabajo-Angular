@@ -1,12 +1,12 @@
   function getToken(){
-      console.log("entro");
+    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var login=[];
 
     var raw = JSON.stringify({
-      "correo": "fminima@gmail.com",
-      "password": "pHLpLOevSv9mPygdNBPV"
+      "correo": document.getElementById("email").value,
+      "password": document.getElementById("btn").value
     });
   login.push(raw);
     
