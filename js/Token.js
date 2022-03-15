@@ -1,4 +1,5 @@
-  function getToken(){ 
+  function getToken(){
+    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     var login=[];    
