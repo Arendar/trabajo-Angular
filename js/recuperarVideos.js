@@ -74,9 +74,9 @@ function muestravideos(videos) {
     console.log('Video ID:', videos.productos[j].url)
 
        var iframe = document.createElement("iframe");
-       iframe.style.width="420 px";
-       iframe.style.height="315 px";
-       iframe.setAttribute("src", "http://www.youtube.com/embed/"+ youtube);
+       iframe.style.width ="420 px";
+       iframe.style.height ="315 px";
+       iframe.setAttribute("src", "http://www.youtube.com/embed/"  + youtube);
        iframe.setAttribute("frameborder", "0");
        categorias[k].appendChild(iframe);
      }
