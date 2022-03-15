@@ -14,7 +14,7 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #fffbfb;
-  background-image: url("/grupo3/img/Fondo1.jpg");
+  background-image: url("../img/Fondo1.jpg");
 }
 #cat{
     background-color: #004a10;
