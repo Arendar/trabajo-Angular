@@ -16,13 +16,6 @@ body {
   background-color: #fffbfb;
   background-image: url("../img/Fondo1.jpg");
 }
-#cat{
-    background-color: #004a10;
-    border-radius: 10cm;
-    border-style: dotted;
-    border-color: #4a1023;
-    display:inline;
-} 
 
 
 .categoria{
