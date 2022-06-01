@@ -16,6 +16,7 @@
       redirect: 'follow'
     };
     
+    //En este punto hay que introducir Angular...
     fetch("https://labinfsoft.herokuapp.com/api/auth/login", requestOptions)
       .then(response => response.json())
       .then(result => sessionStorage.setItem("token", result.token))
