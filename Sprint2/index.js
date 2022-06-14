@@ -21,7 +21,7 @@ app.post("/formulario", (req, res) => {
 app.get("/", (req,res) =>{
   res.send("visitaste la pagina de inicio");
 });
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 app.listen(port, () => {
   console.log(`Escuchando en el puerto ${port}`)
 })
