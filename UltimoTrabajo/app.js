@@ -24,6 +24,6 @@ app.use('/',require('./routers/routers'))
 })*/
 
 
-app.listen(3000,()=>{
-    console.log('Funcionando en http://localhost:3000')
+app.listen(3306,()=>{
+    console.log('Funcionando en http://localhost:3306')
 })
