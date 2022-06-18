@@ -14,6 +14,9 @@ router.get('/register',(req,res)=>{
     res.render('register')
 })
 
+router.get('/getNumeroCategorias',(req, res)=>{
+    
+})
 
 router.post('/register',authController.register)
 router.post('/login',authController.login)

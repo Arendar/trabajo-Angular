@@ -93,7 +93,11 @@ exports.isAuthentiated = async(req,res,next)=>{
     }
 }
 
-exports.logout=(re,res)=>{
+exports.logout=(res)=>{
     res.clearCookie('jwt')
     return res.redirect('/')
+}
+
+exports.getNumeroCategorias = async(req,res)=>{
+    conexion.query("SELECT COUNT(*) FROM categorias");
 }

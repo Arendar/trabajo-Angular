@@ -1,0 +1,26 @@
+{
+  "name": "trabajo-angular",
+  "version": "1.0.0",
+  "description": "javier5598 y Arendar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arendar/trabajo-Angular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arendar/trabajo-Angular/issues"
+  },
+  "homepage": "https://github.com/Arendar/trabajo-Angular#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express-handlebars": "^6.0.6",
+    "express-myconnection": "^1.0.4",
+    "mysql": "^2.18.1"
+  }
+}
