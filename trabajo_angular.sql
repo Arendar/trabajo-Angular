@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-06-2022 a las 18:55:01
+-- Tiempo de generación: 18-06-2022 a las 20:00:03
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -45,6 +45,30 @@ INSERT INTO `categorías` (`ID`, `Nombre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `ID` int(11) NOT NULL,
+  `user` text COLLATE utf16_spanish_ci NOT NULL COMMENT 'Nombre usuario',
+  `pass` text COLLATE utf16_spanish_ci NOT NULL COMMENT 'Contraseña usuario',
+  `access` int(11) NOT NULL COMMENT 'Si tiene acceso a la barra: 1\r\nNo tiene acceso: 2'
+) ENGINE=InnoDB DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`ID`, `user`, `pass`, `access`) VALUES
+(1, 'admin', 'admin', 1),
+(2, 'pepelu', 'abracadabra', 2),
+(3, 'tonio', 'patata-1234', 2),
+(4, 'Iamari', 'veteasaber', 2),
+(5, 'donjI', 'G7x[-%az/', 2);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `vídeos`
 --
 
@@ -81,6 +105,12 @@ ALTER TABLE `categorías`
   ADD PRIMARY KEY (`ID`) USING BTREE;
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indices de la tabla `vídeos`
 --
 ALTER TABLE `vídeos`
@@ -95,6 +125,12 @@ ALTER TABLE `vídeos`
 --
 ALTER TABLE `categorías`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `vídeos`

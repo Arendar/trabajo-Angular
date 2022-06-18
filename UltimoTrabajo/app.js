@@ -27,16 +27,8 @@ app.use('/',require('./routers/routers'))
     res.render('index')
 })*/
 
-app.set('views', __dirname + '/views');
 
-app.use(myconnection(mysql, {
-    host: 'localhost',
-    user: 'root',
-    password:'',
-    port:3306,
-    database:'trabajo angular'
-    }))
 
-app.listen(3306,()=>{
-    console.log('Funcionando en http://localhost:3306')
+app.listen(3300,()=>{
+    console.log('Funcionando en http://localhost:3300')
 })

@@ -1,10 +1,18 @@
 const mysql = require('mysql')
 
+// const conexion =mysql.createConnection({
+//     host : process.env.DB_HOST,
+//     user : process.env.DB_USER,
+//     password : process.env.DB_PASS,
+//     database : process.env.DATABASE,
+// })
+
 const conexion =mysql.createConnection({
-    host : process.env.DB_HOST,
-    user : process.env.DB_USER,
-    password : process.env.DB_PASS,
-    database : process.env.DATABASE,
+    host: 'localhost',
+    user: 'root',
+    password:'',
+    port:3306,
+    database:'trabajo angular'
 })
 
 conexion.connect((error)=>{

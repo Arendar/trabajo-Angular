@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.0
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1
+- Tiempo de generación: 18-06-2022 a las 21:23:23
+- Versión del servidor: 10.4.24-MariaDB
+- Versión de PHP: 8.1.6
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="trabajo angular" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="usuarios">
+                CREATE TABLE `usuarios` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` text COLLATE utf16_spanish_ci NOT NULL COMMENT &#039;Nombre usuario&#039;,
+                  `user` text COLLATE utf16_spanish_ci NOT NULL COMMENT &#039;Contraseña usuario&#039;,
+                  `pass` text COLLATE utf16_spanish_ci NOT NULL COMMENT &#039;Contraseña&#039;,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'trabajo angular'
+    -->
+    <database name="trabajo angular">
+        <!-- Tabla usuarios -->
+        <table name="usuarios">
+            <column name="ID">6</column>
+            <column name="name">Administrador</column>
+            <column name="user">admin</column>
+            <column name="pass">admin</column>
+        </table>
+    </database>
+</pma_xml_export>

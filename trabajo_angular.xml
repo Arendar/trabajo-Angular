@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.0
+- https://www.phpmyadmin.net
+-
+- Servidor: 127.0.0.1
+- Tiempo de generación: 18-06-2022 a las 20:01:34
+- Versión del servidor: 10.4.24-MariaDB
+- Versión de PHP: 8.1.6
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="trabajo angular" collation="utf8mb4_general_ci" charset="utf8mb4">
+            <pma:table name="categorías">
+                CREATE TABLE `categorías` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `Nombre` text COLLATE utf16_spanish_ci DEFAULT NULL,
+                  PRIMARY KEY (`ID`) USING BTREE
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+            </pma:table>
+            <pma:table name="usuarios">
+                CREATE TABLE `usuarios` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `user` text COLLATE utf16_spanish_ci NOT NULL COMMENT &#039;Nombre usuario&#039;,
+                  `pass` text COLLATE utf16_spanish_ci NOT NULL COMMENT &#039;Contraseña usuario&#039;,
+                  `access` int(11) NOT NULL COMMENT &#039;Si tiene acceso a la barra: 1\r\nNo tiene acceso: 2&#039;,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+            </pma:table>
+            <pma:table name="vídeos">
+                CREATE TABLE `vídeos` (
+                  `ID` int(11) NOT NULL AUTO_INCREMENT,
+                  `Titulo` text COLLATE utf16_spanish_ci NOT NULL,
+                  `Enlace` text COLLATE utf16_spanish_ci NOT NULL,
+                  `ID Categoría` int(11) NOT NULL,
+                  PRIMARY KEY (`ID`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf16 COLLATE=utf16_spanish_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'trabajo angular'
+    -->
+    <database name="trabajo angular">
+        <!-- Tabla categorías -->
+        <table name="categorías">
+            <column name="ID">1</column>
+            <column name="Nombre">One Piece</column>
+        </table>
+        <table name="categorías">
+            <column name="ID">2</column>
+            <column name="Nombre">Fútbol</column>
+        </table>
+        <table name="categorías">
+            <column name="ID">3</column>
+            <column name="Nombre">Historia</column>
+        </table>
+        <table name="categorías">
+            <column name="ID">4</column>
+            <column name="Nombre">Videojuegos</column>
+        </table>
+        <!-- Tabla usuarios -->
+        <table name="usuarios">
+            <column name="ID">1</column>
+            <column name="user">admin</column>
+            <column name="pass">admin</column>
+            <column name="access">1</column>
+        </table>
+        <table name="usuarios">
+            <column name="ID">2</column>
+            <column name="user">pepelu</column>
+            <column name="pass">abracadabra</column>
+            <column name="access">2</column>
+        </table>
+        <table name="usuarios">
+            <column name="ID">3</column>
+            <column name="user">tonio</column>
+            <column name="pass">patata-1234</column>
+            <column name="access">2</column>
+        </table>
+        <table name="usuarios">
+            <column name="ID">4</column>
+            <column name="user">Iamari</column>
+            <column name="pass">veteasaber</column>
+            <column name="access">2</column>
+        </table>
+        <table name="usuarios">
+            <column name="ID">5</column>
+            <column name="user">donjI</column>
+            <column name="pass">G7x[-%az/</column>
+            <column name="access">2</column>
+        </table>
+        <!-- Tabla vídeos -->
+        <table name="vídeos">
+            <column name="ID">1</column>
+            <column name="Titulo">Las CENSURAS más ESTÚPIDAS en ONE PIECE (No las conoces).</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=QHoxR4Bgt3g&amp;ab_channel=Gaditoo</column>
+            <column name="ID Categoría">1</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">2</column>
+            <column name="Titulo">One Piece Opening 1 (Español de España) - We Are! HD</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=dSUQXSXgvVw&amp;ab_channel=OPGratis</column>
+            <column name="ID Categoría">1</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">3</column>
+            <column name="Titulo">GRACIAS, MARCELO | Leyenda del Real Madrid</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=-B4orUurUP0&amp;ab_channel=RealMadrid</column>
+            <column name="ID Categoría">2</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">4</column>
+            <column name="Titulo">Diego Maradona 55 jugadas del Dios del Futbol</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=TQNQXObsnEA&amp;ab_channel=JUGADASM%C3%81GICAS2</column>
+            <column name="ID Categoría">2</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">5</column>
+            <column name="Titulo">¿Cuánto territorio [¡REALMENTE!] descubrieron los EUROPEOS? 🇵🇹🇪🇸🇦🇹🇳🇴🏴󠁧󠁢󠁥󠁮󠁧󠁿 - El Mapa de Sebas</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=uJ53w44wql8&amp;ab_channel=ElMapadeSebas</column>
+            <column name="ID Categoría">3</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">6</column>
+            <column name="Titulo">La Rivalidad entre INDIA y PAKISTÁN 🇮🇳 🇵🇰 - El Mapa de Sebas</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=_0lGdi8ZAPM&amp;ab_channel=ElMapadeSebas</column>
+            <column name="ID Categoría">3</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">7</column>
+            <column name="Titulo">El nacimiento del reino nazarí de Granada</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=-qvnPu5Z_As&amp;ab_channel=AcademiaPlay</column>
+            <column name="ID Categoría">3</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">8</column>
+            <column name="Titulo">Mario Strikers de Nintendo Switch es GENIAL! Pero tiene GRANDES PROBLEMAS!</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=Oi3PpAR-8nk&amp;ab_channel=PuertaalS%C3%B3tano</column>
+            <column name="ID Categoría">4</column>
+        </table>
+        <table name="vídeos">
+            <column name="ID">9</column>
+            <column name="Titulo">NINTENDO SWITCH SPORTS ROMPE MIS GANAS DE VIVIR</column>
+            <column name="Enlace">https://www.youtube.com/watch?v=TeAGUySiOHw&amp;ab_channel=Garrus</column>
+            <column name="ID Categoría">4</column>
+        </table>
+    </database>
+</pma_xml_export>

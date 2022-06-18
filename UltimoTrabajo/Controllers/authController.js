@@ -10,7 +10,7 @@ exports.register = async(req, res)=>{
         const pass = req.body.pass
         let passHash= await bcryptjs.hash(pass, 8)
 
-        conexion.query('INSERT INTO users SET ?', {user:user, name:name, pass:pass}, (error,results)=>{
+        conexion.query('INSERT INTO usuarios SET ?', {user:user, name:name, pass:pass}, (error,results)=>{
             if(error){console.log(error)}
             res.redirect('/')
     })
@@ -35,7 +35,7 @@ exports.login = async(req, res)=>{
                 ruta:'login'
             })
         }else{
-            conexion.query('SELECT * FROM users Where user = ?', [user], async (error,results)=>{
+            conexion.query('SELECT * FROM usuarios Where user = ?', [user], async (error,results)=>{
                 if(results.length == 0 || !(await bcryptjs.compare(pass,results[0].pass))){
                     res.render('login',{
                         alert:true,
@@ -79,7 +79,7 @@ exports.isAuthentiated = async(req,res,next)=>{
     if(req.cookies.jwt){
         try{
             const decodificada = await promisify(jwt.verify)(req.cookies.jwt,process.env.JWT_SECRETO)
-            conexion.query('SELECT *FROM users WHERE id = ?',[decodificada.id],(error,results)=>{
+            conexion.query('SELECT *FROM usuarios WHERE id = ?',[decodificada.id],(error,results)=>{
                 if(!results){return next()}
                 req.user=results[0]
                 return next()
@@ -99,5 +99,55 @@ exports.logout=(res)=>{
 }
 
 exports.getNumeroCategorias = async(req,res)=>{
-    conexion.query("SELECT COUNT(*) FROM categorias");
+    try{
+        conexion.query("SELECT COUNT(*) FROM categorias", (err, results)=>{
+            if (err) throw err;
+            res.body.categorias = results;
+        }) 
+    }catch( error){
+        console.log(error);
+    }
+
+    return res.body.categorias;
+}
+
+exports.getNumeroVideos = async(req,res)=>{
+    try{
+        conexion.query("SELECT COUNT(*) FROM vídeos", (err, results)=>{
+            if (err) throw err;
+            res.body.videos = results;
+        }) 
+    }catch( error){
+        console.log(error);
+    }
+
+    return res.body.videos;
+}
+
+//Iremos formando las categorias con un for que las recorra todas
+//Esta funcion debe de devolver el nombre de la categoria
+exports.getCategorias = async(req,res)=>{
+    try{
+        const numeroCategoria = req.body.numeroCat;
+        conexion.query('SELECT Nombre FROM categorías Where ID = ?', [numeroCategoria], async (error,results)=>{
+            if(error){console.log(error)}
+            res.body.nombreCat =  results[0];
+        })
+    }catch( error){
+        console.log(error);
+    }
+    return res.body.nombreCat;
+}
+
+exports.getVideos = async(req, res) =>{
+    try{
+        const numeroVideo = req.body.numeroVid;
+        conexion.query('SELECT * FROM vídeos Where ID = ?', [numeroVideo], async (error,results)=>{
+            if(error){console.log(error)}
+            res.body.video =  results[0];
+        })
+    }catch( error){
+        console.log(error);
+    }
+    return res.body.video;
 }
