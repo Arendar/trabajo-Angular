@@ -1,0 +1,14 @@
+<% results.forEach((categoria)=>{%>     
+            <tr>  
+                <td></td>  
+                <td><%= categoria.Nombre %></td> --> 
+                <td>
+                  <a href="/edit" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/delete" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'></i>BORRAR</a>                   
+                </td>
+            </tr>                                   
+       <% }) %>
+
+
+<% if(user) {%>
+              <% for(var i =0;i < user.length; i++) { %
