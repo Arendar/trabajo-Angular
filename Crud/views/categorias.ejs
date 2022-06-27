@@ -21,7 +21,7 @@
                 <a class="nav-link active" aria-current="page" href="/index">Inicio</a>
               </li>
               <li>
-                <a class="nav-link active" aria-current="page" href="/categorias.ejs">Categorias</a>
+                <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
               </li>                            
             </ul>            
           </div>
@@ -43,8 +43,8 @@
                 <td><%= categoria.id %></td>  
                 <td><%= categoria.Nombre %></td>
                 <td>
-                  <a href="/edit/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/delete/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+                  <a href="/editCategoria/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deleteCategoria/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
                 </td>
             </tr>                                   
          <% }) %>

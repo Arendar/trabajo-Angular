@@ -40,7 +40,7 @@ router.get('/delete/:id', (req, res) => {
         if(error){
             console.log(error);
         }else{           
-            res.redirect('/');         
+            res.redirect('/index');         
         }
     })
 });

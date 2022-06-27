@@ -13,28 +13,34 @@ router.get('/categorias', (req, res)=>{
         }   
     })
 })
+
+
 router.get('/createcategoria', (req,res)=>{
     res.render('createcategoria');
 })
 
-router.get('/edit/:id', (req,res)=>{    
+
+router.get('/editCategoria/:id', (req,res)=>{    
     const id = req.params.id;
     conexion.query('SELECT * FROM categorías WHERE id=?',[id] , (error, results) => {
         if (error) {
             throw error;
         }else{            
-            res.render('edit.ejs', {Nombre:results[0]});            
+            //Había que meter categoria en este punto
+                                            //|
+                                            //V
+            res.render('editCategoria.ejs', {categoria:results[0]});            
         }        
     });
 });
     
-router.get('/delete/:id', (req, res) => {
+router.get('/deleteCategoria/:id', (req, res) => {
     const id = req.params.id;
     conexion.query('DELETE FROM categorías WHERE id = ?',[id], (error, results)=>{
         if(error){
             console.log(error);
         }else{           
-            res.redirect('/categorias.ejs');         
+            res.redirect('/categorias');         
         }
     })
 });

@@ -9,7 +9,7 @@ exports.save = (req, res)=>{
             console.log(error);
         }else{
             //console.log(results);   
-            res.redirect('/');         
+            res.redirect('/index');         
         }
 });
 };
@@ -22,30 +22,30 @@ exports.update = (req, res)=>{
         if(error){
             console.log(error);
         }else{           
-            res.redirect('/');         
+            res.redirect('/index');         
         }
 });
 };
 //GUARDAR una cateogira
 exports.saveCategoria = (req, res)=>{
-    const NOMBRE = req.body.NOMBRE;
-    conexion.query('INSERT INTO categorías SET ?',{NOMBRE:NOMBRE}, (error, results)=>{
+    const NOMBRE = req.body.Nombre;
+    conexion.query('INSERT INTO categorías SET ?',{Nombre:NOMBRE}, (error, results)=>{
         if(error){
             console.log(error);
         }else{
             //console.log(results);   
-            res.redirect('/categorias.ejs');         
+            res.redirect('/categorias');         
         }
 });
 };
 exports.updateCategoria = (req, res)=>{
     const id = req.body.id;
-    const NOMBRE = req.body.user;
-    conexion.query('UPDATE categorías SET ? WHERE id = ?',[{NOMBRE:NOMBRE}, id], (error, results)=>{
+    const NOMBRE = req.body.Nombre;
+    conexion.query('UPDATE categorías SET ? WHERE id = ?',[{Nombre:NOMBRE}, id], (error, results)=>{
         if(error){
             console.log(error);
         }else{           
-            res.redirect('/categorias.ejs');         
+            res.redirect('/categorias');         
         }
 });
 };
