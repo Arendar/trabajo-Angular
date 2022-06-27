@@ -4,7 +4,8 @@ const router = express.Router();
 
 const conexion = require('../database/db');
 
-router.get('/', (req, res)=>{     
+
+router.get('/index', (req, res)=>{     
     conexion.query('SELECT * FROM users',(error, resultados)=>{
         if(error){
             throw error;
