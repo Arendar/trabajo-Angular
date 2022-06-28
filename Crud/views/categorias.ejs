@@ -22,7 +22,17 @@
               </li>
               <li>
                 <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
+<<<<<<< HEAD
+<<<<<<< HEAD
+              </li>      
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/videos">Videos</a>
+              </li>                      
+=======
+=======
+>>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
               </li>                            
+>>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
             </ul>            
           </div>
         </div>
@@ -38,13 +48,23 @@
           </tr>
         </thead>
         <tbody>
-          <% categoria.forEach((categoria)=>{ %>
+          <% categoria.forEach((categorias)=>{ %>
             <tr>  
-                <td><%= categoria.id %></td>  
-                <td><%= categoria.Nombre %></td>
+                <td><%= categorias.id %></td>  
+                <td><%= categorias.Nombre %></td>
                 <td>
+<<<<<<< HEAD
+<<<<<<< HEAD
+                  <a href="/editcategorias/<%= categorias.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deletecategorias/<%= categorias.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+=======
                   <a href="/editCategoria/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
                   <a href="/deleteCategoria/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+>>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+=======
+                  <a href="/editCategoria/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deleteCategoria/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+>>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
                 </td>
             </tr>                                   
          <% }) %>

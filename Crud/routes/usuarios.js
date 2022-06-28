@@ -19,17 +19,13 @@ router.get('/create', (req,res)=>{
     res.render('create');
 })
 
-router.get('/categorias.ejs', (req,res)=>{
-    res.render('categorias');
-})
-
 router.get('/edit/:id', (req,res)=>{    
     const id = req.params.id;
     conexion.query('SELECT * FROM users WHERE id=?',[id] , (error, results) => {
         if (error) {
             throw error;
         }else{            
-            res.render('edit.ejs', {user:results[0]});            
+            res.render('edit', {user:results[0]});            
         }        
     });
 });
