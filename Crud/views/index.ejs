@@ -18,14 +18,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index">Inicio</a>
-              </li>      
+                <a class="nav-link active" aria-current="page" href="/Inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index">Usuarios</a>
+              </li>       
               <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/videos">Videos</a>
             </li>
+            <li>
+
+            </li>
+            <li class="nav-item"></li>
+            <a href="/logout" class="btn btn-outline-danger"><i class=>Logout</i></a>
             </ul>            
           </div>
         </div>
@@ -49,7 +57,7 @@
                 <td><%= user.pass %></td>
                 <td>
                   <a href="/edit/<%= user.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/delete/<%= user.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+                  <a href="/delete/<%= user.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                 
                 </td>
             </tr>                                   
          <% }) %>

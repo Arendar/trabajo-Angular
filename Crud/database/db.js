@@ -3,8 +3,9 @@ const conexion = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : '',
-    database : 'trabajo angular'  
+    database : 'trabajo'  
 });
+
 conexion.connect((error)=>{
     if (error) {
       console.error('El error de conexión es: ' + error);

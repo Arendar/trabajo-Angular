@@ -13,55 +13,29 @@ router.get('/categorias', (req, res)=>{
         }   
     })
 })
-
-
 router.get('/createcategoria', (req,res)=>{
     res.render('createcategoria');
 })
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-router.get('/editcategorias/:id', (req,res)=>{    
-=======
+router.get('/editCategoria', (req,res)=>{
+    res.render('editCategoria');
+})
 
 router.get('/editCategoria/:id', (req,res)=>{    
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
 
-router.get('/editCategoria/:id', (req,res)=>{    
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
     const id = req.params.id;
     conexion.query('SELECT * FROM categorías WHERE id=?',[id] , (error, results) => {
         if (error) {
             throw error;
-        }else{            
-<<<<<<< HEAD
-<<<<<<< HEAD
-            res.render('editcategorias', {Genero:results[0]});            
-=======
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-            //Había que meter categoria en este punto
-                                            //|
-                                            //V
-            res.render('editCategoria.ejs', {categoria:results[0]});            
-<<<<<<< HEAD
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+        }else{           
+            res.render('editCategoria', {Genero:results[0]});            
+            
         }        
     });
 });
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-router.get('/deletecategorias/:id', (req, res) => {
-=======
+
 router.get('/deleteCategoria/:id', (req, res) => {
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
-router.get('/deleteCategoria/:id', (req, res) => {
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
     const id = req.params.id;
     conexion.query('DELETE FROM categorías WHERE id = ?',[id], (error, results)=>{
         if(error){

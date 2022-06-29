@@ -18,25 +18,23 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="/Inicio">Inicio</a>
               </li>
-              <li>
-                <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
-<<<<<<< HEAD
-<<<<<<< HEAD
-              </li>      
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/videos">Videos</a>
-              </li>                      
-=======
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-              </li>                            
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-            </ul>            
-          </div>
-        </div>
-      </nav>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/index">Usuarios</a>
+          </li>      
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/categorias">Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/videos">Videos</a>
+        </li>
+        <li class="nav-item"></li>
+        <a href="/logout" class="btn btn-outline-danger"><i class=>Logout</i></a>
+        </ul>            
+      </div>
+    </div>
+  </nav>
       <div  eblclass="container">    
         <a href="createcategoria" class="btn btn-outline-primary mt-4">CREAR</a>    
       <table class="table table-bordered table-striped text-center mt-4">
@@ -53,18 +51,8 @@
                 <td><%= categorias.id %></td>  
                 <td><%= categorias.Nombre %></td>
                 <td>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                  <a href="/editcategorias/<%= categorias.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/deletecategorias/<%= categorias.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
-=======
-                  <a href="/editCategoria/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/deleteCategoria/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
-                  <a href="/editCategoria/<%= categoria.id %>" class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/deleteCategoria/<%= categoria.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+                  <a href="/editCategoria/<%= categorias.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deleteCategoria/<%= categorias.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                                    
                 </td>
             </tr>                                   
          <% }) %>

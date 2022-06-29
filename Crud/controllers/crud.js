@@ -8,14 +8,7 @@ exports.save = (req, res)=>{
         if(error){
             console.log(error);
         }else{
-<<<<<<< HEAD
-  
-=======
             //console.log(results);   
-<<<<<<< HEAD
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
             res.redirect('/index');         
         }
 });
@@ -35,27 +28,14 @@ exports.update = (req, res)=>{
 };
 //GUARDAR una cateogira
 exports.saveCategoria = (req, res)=>{
-<<<<<<< HEAD
-<<<<<<< HEAD
-    const Nombre = req.body.Nombre;
-    conexion.query('INSERT INTO categorías SET ?',{Nombre:Nombre}, (error, results)=>{
-        if(error){
-            console.log(error);
-        }else{
-    
-=======
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+
     const NOMBRE = req.body.Nombre;
     conexion.query('INSERT INTO categorías SET ?',{Nombre:NOMBRE}, (error, results)=>{
         if(error){
             console.log(error);
         }else{
             //console.log(results);   
-<<<<<<< HEAD
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+
             res.redirect('/categorias');         
         }
 });
@@ -63,24 +43,14 @@ exports.saveCategoria = (req, res)=>{
 
 exports.updateCategoria = (req, res)=>{
     const id = req.body.id;
-<<<<<<< HEAD
-<<<<<<< HEAD
     const Nombre = req.body.Nombre;
     conexion.query('UPDATE categorías SET ? WHERE id = ?',[{Nombre:Nombre}, id], (error, results)=>{
-=======
-    const NOMBRE = req.body.Nombre;
-    conexion.query('UPDATE categorías SET ? WHERE id = ?',[{Nombre:NOMBRE}, id], (error, results)=>{
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
-    const NOMBRE = req.body.Nombre;
-    conexion.query('UPDATE categorías SET ? WHERE id = ?',[{Nombre:NOMBRE}, id], (error, results)=>{
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+
+
         if(error){
             console.log(error);
         }else{           
             res.redirect('/categorias');         
-<<<<<<< HEAD
-<<<<<<< HEAD
         }
 });
 };
@@ -104,10 +74,7 @@ exports.updatevideos = (req, res)=>{
             console.log(error);
         }else{           
             res.redirect('/videos');         
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
-=======
->>>>>>> 3b9d8e1962229799439f7a898618a540de405dab
+
         }
 });
 };

@@ -18,22 +18,22 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="/categorias">Inicio</a>
               </li>                            
             </ul>            
           </div>
         </div>
       </nav>
-      <% if (categoria) { %>
+      <% if (Genero) { %>
       <div class="container mt-4">          
           <div class="card border-secondary">  
                 <div class="card-header">Editar Registro</div>
                 <div class="card-body">
                     <form action="/updateCategoria" method="POST">
-                         <input id="id" name="id" value="<%= categoria.id %>" hidden>
+                         <input id="id" name="id" value="<%= Genero.id %>" hidden>
                         <div class="mb-3">
                           <label for="Nombre" class="form-label">Categoria</label>
-                          <input type="text" class="form-control" id="Nombre" name="Nombre" tabindex="1" value="<%= categoria.Nombre  %>">                        
+                          <input type="text" class="form-control" id="Nombre" name="Nombre" tabindex="1" value="<%= Genero.Nombre  %>">                        
                         </div>                                                         
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/categorias" class="btn btn-secondary">Cancelar</a>
