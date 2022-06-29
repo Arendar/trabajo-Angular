@@ -3,7 +3,8 @@ const conexion = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : '',
-    database : 'trabajo'  
+    database : 'trabajo angular',
+    multipleStatements: true  
 });
 
 conexion.connect((error)=>{

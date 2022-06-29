@@ -29,14 +29,22 @@
             <div class="card-body">
                 <form action="/savevideos" method="POST">
                     <div class="mb-3">
-                    <label for="user" class="form-label">Video</label>
-                    <input type="text" class="form-control" id="Titulo" name="Titulo" tabindex="1">
+                      <label for="video" class="form-label">Video</label>
+                      <input type="text" class="form-control" id="Titulo" name="Titulo" tabindex="1">
                     </div>   
                     <div class="mb-3">
-                      <label for="user" class="form-label">Enlace</label>
+                      <label for="enlace" class="form-label">Enlace</label>
                       <input type="text" class="form-control" id="Enlace" name="Enlace" tabindex="1">                   
-                      </div> 
-                                  
+                    </div> 
+                    <div class="mb-3">
+                      <label for="categoria" class="form-label">Categoria</label>
+                      <select name="idCategoria" id="idCategoria">
+                        <% categoria.forEach((categorias)=>{ %>
+                          <option value="<%= categorias.id %>"><%= categorias.Nombre %></option>
+                        <% }) %>
+                      </select>                  
+                    </div>      
+                    
                     <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                     <a href="/videos" class="btn btn-secondary">Cancelar</a>
                 

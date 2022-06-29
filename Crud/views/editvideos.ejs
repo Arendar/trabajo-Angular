@@ -24,18 +24,34 @@
           </div>
         </div>
       </nav>
-      <% if (Videos) { %>
+      <% if (conjunto) { %>
       <div class="container mt-4">          
           <div class="card border-secondary">  
                 <div class="card-header">Editar Registro</div>
                 <div class="card-body">
                     <form action="/updatevideos" method="POST">
-                         <input id="id" name="id" value="<%= Videos.id %>" hidden>
+                         <input id="id" name="id" value="<%= conjunto[0].id %>" hidden>
                         <div class="mb-3">
-                          <label for="Videos" class="form-label">Usuario</label>
-                          <input type="text" class="form-control" id="Titulo" name="Titulo" tabindex="1" value="<%= Videos.Titulo  %>">                        
-                        </div>   
-                                                                                    
+                          <label for="Videos" class="form-label">Titulo</label>
+                          <input type="text" class="form-control" id="Titulo" name="Titulo" tabindex="1" value="<%= conjunto[0].Titulo  %>">                        
+                        </div>  
+                        <div class="mb-3">
+                          <label for="enlace" class="form-label">Enlace</label>
+                          <input type="text" class="form-control" id="Enlace" name="Enlace" tabindex="1" value="<%= conjunto[0].Enlace %>">                   
+                        </div> 
+                        <div class="mb-3">
+                          <label for="categoria" class="form-label">Categoria</label>
+                          <select name="idCategoria" id="idCategoria">
+                            <% conjunto[1].forEach((categorias)=>{ %>
+                              <%if(conjunto[0].idCat == categorias.id ){%>
+                                <option value="<%= categorias.id %>" selected><%= categorias.Nombre %></option>
+                              <% }else{ %>
+                                <option value="<%= categorias.id %>" ><%= categorias.Nombre %></option>
+                              <% }%>
+                            <% }) %>
+                            </select>                  
+                        </div>      
+                        
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/videos" class="btn btn-secondary">Cancelar</a>
                     </form>      

@@ -43,18 +43,26 @@
             <th scope="col">ID</th>
             <th scope="col">Nombre</th>  
             <th scope="col">Enlace</th> 
+            <th scope="col">Categoria</th>
             <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <% video.forEach((video)=>{ %>
+          <% conjunto[0].forEach((Video)=>{ %>
             <tr>  
-                <td><%= video.id %></td>  
-                <td><%= video.Titulo %></td>
-                <td><a href ="<%= video.Enlace %><"><%= video.Enlace %></a></td>
+                <td><%= Video.id %></td>  
+                <td><%= Video.Titulo %></td>
+                <td><a href ="<%= Video.Enlace %><"><%= Video.Enlace %></a></td>
                 <td>
-                  <a href="/editvideos/<%= video.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/deletevideos/<%= video.id %>"class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
+                  <% conjunto[1].forEach((categoria)=>{ %>
+                    <% if(Video.idCat == categoria.id){ %>
+                        <%= categoria.Nombre %>
+                      <% } %>
+                  <% }) %>
+                </td>
+                <td>
+                  <a href="/editvideos/<%= Video.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deletevideos/<%= Video.id %>"class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   
                 </td>
             </tr>                                   
          <% }) %>

@@ -56,9 +56,11 @@ exports.updateCategoria = (req, res)=>{
 };
 
 exports.savevideos = (req, res)=>{
-    const Titulo = req.body.Titulo;
-    const Enlace = req.body.Enlace;
-    conexion.query('INSERT INTO vídeos SET ?',[{Titulo:Titulo},{Enlace:Enlace}], (error, results)=>{
+    console.log(req.body);
+    const titulo = req.body.Titulo;
+    const enlace = req.body.Enlace;
+    const categoria = req.body.idCategoria;
+    conexion.query('INSERT INTO vídeos SET ?',[{Titulo:titulo},{Enlace:enlace},{idCat:categoria}], (error, results)=>{
         if(error){
             console.log(error);
         }else{   
@@ -67,14 +69,16 @@ exports.savevideos = (req, res)=>{
 });
 };
 exports.updatevideos = (req, res)=>{
+    console.log(req);
     const id = req.body.id;
     const Titulo = req.body.Titulo;
-    conexion.query('UPDATE vídeos SET ? WHERE id = ?',[{Titulo:Titulo}, id], (error, results)=>{
+    const Enlace = req.body.Enlace;
+    const categoria = req.body.idCategoria;
+    conexion.query('UPDATE vídeos SET ? WHERE id = ?',[{Titulo:Titulo},{Enlace:Enlace}, {idCat:categoria}], id, (error, results)=>{
         if(error){
             console.log(error);
         }else{           
-            res.redirect('/videos');         
-
+            res.redirect('/videos'); 
         }
 });
 };
