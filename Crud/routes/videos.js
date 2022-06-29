@@ -30,14 +30,33 @@ router.get('/createvideos', (req,res)=>{
 
 router.get('/editvideos/:id', (req,res)=>{    
     const id = req.params.id;
-    console.log(id);
     //No puedes hacer un query dentro de otro..
-    conexion.query('SELECT * FROM vídeos WHERE id=?; SELECT * FROM categorías' ,[id] ,(error, results)=>{
+    //Aquí hay algo que no funciona al hacer las dos peticiones
+    //SELECT * FROM categorías
+    conexion.query('SELECT * FROM vídeos WHERE id=?' ,[id], (error, results)=>{
         if(error){
             throw error;
         } else {       
             console.log(results);
-            res.render('editvideos', {conjunto:results});               
+            //categoria:results[1]
+            res.render('editvideos', {video:results});               
+        }   
+    })
+});
+
+router.get('/editcategoriavideo/:id', (req,res)=>{    
+    const id = req.params.id;
+    //No puedes hacer un query dentro de otro..
+    //Aquí hay algo que no funciona al hacer las dos peticiones
+    //SELECT * FROM categorías
+    conexion.query('SELECT id FROM vídeos WHERE id=?; SELECT * FROM categorías' ,[id], (error, results)=>{
+        if(error){
+            throw error;
+        } else {       
+            console.log(results[0]);
+            console.log(results[1]);
+            //categoria:results[1]
+            res.render('editcategoriavideo', {ID:results[0], categoria:results[1]});               
         }   
     })
 });

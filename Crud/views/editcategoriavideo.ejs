@@ -24,23 +24,19 @@
           </div>
         </div>
       </nav>
-      <% if (video) { %>
+      <% if (ID) { %>
       <div class="container mt-4">          
           <div class="card border-secondary">  
-                <div class="card-header">Editar Registro</div>
+                <div class="card-header">Editar categoria</div>
                 <div class="card-body">
-                    <form action="/updatevideos" method="POST">
-                         <input id="id" name="id" value="<%= video.id %>" hidden>
-                        <div class="mb-3">
-                          <label for="Videos" class="form-label">Titulo</label>
-                          <input type="text" class="form-control" id="Titulo" name="Titulo" tabindex="1" value="<%= video.Titulo  %>">                        
-                        </div>  
-                        <div class="mb-3">
-                          <label for="enlace" class="form-label">Enlace</label>
-                          <input type="text" class="form-control" id="Enlace" name="Enlace" tabindex="1" value="<%= video.Enlace %>">                   
-                        </div> 
+                    <form action="/updatevideoscat" method="POST">
+                        <input id="id" name="id" value="<%= ID.id %>" hidden>
+                        <select name="Categoria" id="Categoria">
+                            <% categoria.forEach((categoria)=>{ %>
+                                <option value="<%= categoria.id%>"><%= categoria.Nombre %></option>    
+                            <% }) %>
+                        </select>
                             
-                        <a href="/editcategoriavideo/<%= video.id %>" class="btn btn-secondary">Cambiar categoria</a>
                         <button type="submit" class="btn btn-primary" tabindex="5">Guardar</button>
                         <a href="/videos" class="btn btn-secondary">Cancelar</a>
                     </form>      
