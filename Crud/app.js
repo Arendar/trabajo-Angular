@@ -1,8 +1,10 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 app.set('view engine','ejs');
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(cookieParser());
 app.use(require('./routes/usuarios'));
 app.use(require('./routes/categorias1'));
 app.use(require('./routes/videos'));
@@ -18,20 +20,14 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
-app.get('/Inicio', (req, res)=>{     
-    conexion.query('SELECT * FROM users',(error, user)=>{
-        if(error){
-            throw error;
-        } else {                       
-            res.render('Inicio', {user});            
-        }   
-    })
-})
 app.get('/',(req, res)=>{
     res.render('login');
 })
 app.get('/Inicio',(req, res)=>{
     res.render('Inicio');
+})
+app.get('/Inicio_noAdmin',(req, res)=>{
+    res.render('Inicio_noAdmin');
 })
 app.post('/auth', async (req, res)=> {
 	try {
@@ -75,7 +71,8 @@ app.post('/auth', async (req, res)=> {
                         httpOnly: true
                    }
                    res.cookie('jwt', token, cookiesOptions)
-                   res.render('login', {
+                   if(user == "admin"){
+                    res.render('login', {
                         alert: true,
                         alertTitle: "Conexión exitosa",
                         alertMessage: "¡LOGIN CORRECTO!",
@@ -84,6 +81,17 @@ app.post('/auth', async (req, res)=> {
                         timer: 800,
                         ruta: 'Inicio'
                    })
+                   }else{
+                    res.render('login', {
+                        alert: true,
+                        alertTitle: "Conexión exitosa",
+                        alertMessage: "¡LOGIN CORRECTO!",
+                        alertIcon:'success',
+                        showConfirmButton: false,
+                        timer: 800,
+                        ruta: 'Inicio_noAdmin'
+                   })
+                   }
                 }
             })
         }
@@ -92,23 +100,23 @@ app.post('/auth', async (req, res)=> {
     }
 })
 //12 - Método para controlar que está auth en todas las páginas
-app.get('/index', async (req, res, next)=>{
-    if (req.cookies.jwt) {
-        try {
-            const decodificada = await promisify(jwt.verify)(req.cookies.jwt, JWT_SECRETO)
-            conexion.query('SELECT * FROM users WHERE id = ?', [decodificada.id], (error, results)=>{
-                if(!results){return next()}
-                req.user = results[0]
-                return next()
-            })
-        } catch (error) {
-            console.log(error)
-            return next()
-        }
-    }else{
-        res.redirect('/login')        
-    }
-})
+// app.get('/index', async (req, res, next)=>{
+//     if (req.cookies.jwt) {
+//         try {
+//             const decodificada = await promisify(jwt.verify)(req.cookies.jwt, JWT_SECRETO)
+//             conexion.query('SELECT * FROM users WHERE id = ?', [decodificada.id], (error, results)=>{
+//                 if(!results){return next()}
+//                 req.user = results[0]
+//                 return next()
+//             })
+//         } catch (error) {
+//             console.log(error)
+//             return next()
+//         }
+//     }else{
+//         res.redirect('/login')        
+//     }
+// })
 
 app.get('/logout', (req, res)=>{
     res.clearCookie('jwt')   

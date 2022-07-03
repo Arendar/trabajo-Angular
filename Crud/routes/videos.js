@@ -17,6 +17,16 @@ router.get('/videos', (req, res)=>{
     })
 })
 
+router.get('/verVideos', (req, res)=>{
+    conexion.query('SELECT * FROM vídeos; SELECT * FROM categorías',(error, results)=>{
+        if(error){
+            throw error;
+        } else {       
+            //console.log(results);
+            res.render('verVideos', {videos:results[0], categorias:results[1]});
+        }   
+    })
+})
 
 router.get('/createvideos', (req,res)=>{
     conexion.query('SELECT * FROM categorías',(error, categoria)=>{
