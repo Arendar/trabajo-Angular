@@ -48,18 +48,12 @@
           </tr>
         </thead>
         <tbody>
-          <% conjunto[0].forEach((Video)=>{ %>
+          <% conjunto.forEach((Video)=>{ %>
             <tr>  
                 <td><%= Video.id %></td>  
                 <td><%= Video.Titulo %></td>
                 <td><a href ="<%= Video.Enlace %><"><%= Video.Enlace %></a></td>
-                <td>
-                  <% conjunto[1].forEach((categoria)=>{ %>
-                    <% if(Video.idCat == categoria.id){ %>
-                        <%= categoria.Nombre %>
-                      <% } %>
-                  <% }) %>
-                </td>
+                <td><%= Video.Nombre %></td>
                 <td>
                   <a href="/editvideos/<%= Video.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
                   <a href="/deletevideos/<%= Video.id %>"class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                   

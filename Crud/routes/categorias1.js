@@ -24,10 +24,11 @@ router.get('/editCategoria', (req,res)=>{
 router.get('/editCategoria/:id', (req,res)=>{    
 
     const id = req.params.id;
-    conexion.query('SELECT * FROM categorías WHERE id=?',[id] , (error, results) => {
+    conexion.query('SELECT * FROM categorías WHERE idC=?',[id] , (error, results) => {
         if (error) {
             throw error;
         }else{           
+            //console.log(results);
             res.render('editCategoria', {Genero:results[0]});            
             
         }        
@@ -37,7 +38,7 @@ router.get('/editCategoria/:id', (req,res)=>{
 
 router.get('/deleteCategoria/:id', (req, res) => {
     const id = req.params.id;
-    conexion.query('DELETE FROM categorías WHERE id = ?',[id], (error, results)=>{
+    conexion.query('DELETE FROM categorías WHERE idC = ?',[id], (error, results)=>{
         if(error){
             console.log(error);
         }else{           

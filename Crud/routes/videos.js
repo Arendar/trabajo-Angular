@@ -7,7 +7,7 @@ const conexion = require('../database/db');
 router.get('/videos', (req, res)=>{  
     //No puedes hacer un query dentro de otro. 
     //Si quieres hacer otra petición a otra tabla ponlo dentro del mismo query   
-    conexion.query('SELECT * FROM vídeos; SELECT * FROM categorías',(error, results)=>{
+    conexion.query('SELECT vídeos.id, vídeos.Titulo, vídeos.Enlace, categorías.Nombre FROM vídeos JOIN categorías ON vídeos.idCat=categorías.idC;',(error, results)=>{
         if(error){
             throw error;
         } else {       
@@ -43,13 +43,13 @@ router.get('/editvideos/:id', (req,res)=>{
     //No puedes hacer un query dentro de otro..
     //Aquí hay algo que no funciona al hacer las dos peticiones
     //SELECT * FROM categorías
-    conexion.query('SELECT * FROM vídeos WHERE id=?' ,[id], (error, results)=>{
+    conexion.query('SELECT * FROM vídeos WHERE id=?;' ,[id], (error, results)=>{
         if(error){
             throw error;
         } else {       
             console.log(results);
             //categoria:results[1]
-            res.render('editvideos', {video:results});               
+            res.render('editvideos', {peli:results});               
         }   
     })
 });
@@ -59,14 +59,14 @@ router.get('/editcategoriavideo/:id', (req,res)=>{
     //No puedes hacer un query dentro de otro..
     //Aquí hay algo que no funciona al hacer las dos peticiones
     //SELECT * FROM categorías
-    conexion.query('SELECT id FROM vídeos WHERE id=?; SELECT * FROM categorías' ,[id], (error, results)=>{
+    conexion.query('SELECT (id, idCat) FROM vídeos WHERE id=?; SELECT * FROM categorías' ,[id], (error, results)=>{
         if(error){
             throw error;
         } else {       
             console.log(results[0]);
             console.log(results[1]);
             //categoria:results[1]
-            res.render('editcategoriavideo', {ID:results[0], categoria:results[1]});               
+            res.render('editcategoriavideo', {video:results[0], categoria:results[1]});               
         }   
     })
 });
@@ -85,4 +85,5 @@ router.get('/deletevideos/:id', (req, res) => {
 const crud = require('../controllers/crud');
 router.post('/savevideos', crud.savevideos);
 router.post('/updatevideos', crud.updatevideos);
+router.post('/updateCategoriaVideos',crud.updateCategoriaVideos);
 module.exports = router; 

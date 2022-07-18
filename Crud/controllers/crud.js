@@ -44,7 +44,7 @@ exports.saveCategoria = (req, res)=>{
 exports.updateCategoria = (req, res)=>{
     const id = req.body.id;
     const Nombre = req.body.Nombre;
-    conexion.query('UPDATE categorías SET ? WHERE id = ?',[{Nombre:Nombre}, id], (error, results)=>{
+    conexion.query('UPDATE categorías SET ? WHERE idC = ?',[{Nombre:Nombre}, id], (error, results)=>{
 
 
         if(error){
@@ -71,8 +71,7 @@ exports.updatevideos = (req, res)=>{
     const id = req.body.id;
     const Titulo = req.body.Titulo;
     const Enlace = req.body.Enlace;
-    const categoria = req.body.idCategoria;
-    conexion.query('UPDATE vídeos SET ? WHERE id = ?',[{Titulo:Titulo, Enlace:Enlace, idCat:categoria}, id], (error, results)=>{
+    conexion.query('UPDATE vídeos SET ? WHERE id = ?',[{Titulo:Titulo, Enlace:Enlace}, id], (error, results)=>{
         if(error){
             console.log(error);
         }else{           
@@ -80,3 +79,15 @@ exports.updatevideos = (req, res)=>{
         }
 });
 };
+
+exports.updateCategoriaVideos = (req,res)=>{
+    const id = req.body.id;
+    const idCat = req.body.idCategoria;
+    conexion.query('UPDATE vídeos SET ? WHERE id = ?',[{idCat:idCat}, id], (error,res)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.redirect('/videos');
+        }
+    })
+}

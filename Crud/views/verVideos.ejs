@@ -39,7 +39,7 @@
               <%= categoria.Nombre %>
             </h3>
             <% videos.forEach((video)=>{ %>
-              <% if(video.idCat == categoria.id){ %>
+              <% if(video.idCat == categoria.idC){ %>
                 <p><%= video.Titulo %></p>
                 <!--Poner id video en el botón-->
                 <button ><a href="<%= video.Enlace %>" onclick="return mostrarVideo(this)"><%= video.id %></a></button>

@@ -24,7 +24,7 @@
           </div>
         </div>
       </nav>
-      <% if (ID) { %>
+      <% if (video) { %>
       <div class="container mt-4">          
           <div class="card border-secondary">  
                 <div class="card-header">Editar categoria</div>
@@ -33,7 +33,7 @@
                         <input id="id" name="id" value="<%= ID.id %>" hidden>
                         <select name="Categoria" id="Categoria">
                             <% categoria.forEach((categoria)=>{ %>
-                                <option value="<%= categoria.id%>"><%= categoria.Nombre %></option>    
+                                <option value="<%= categoria.idC%>"><%= categoria.Nombre %></option>    
                             <% }) %>
                         </select>
                             

@@ -48,11 +48,11 @@
         <tbody>
           <% categoria.forEach((categorias)=>{ %>
             <tr>  
-                <td><%= categorias.id %></td>  
+                <td><%= categorias.idC %></td>  
                 <td><%= categorias.Nombre %></td>
                 <td>
-                  <a href="/editCategoria/<%= categorias.id %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
-                  <a href="/deleteCategoria/<%= categorias.id %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                                    
+                  <a href="/editCategoria/<%= categorias.idC %>"  class="btn btn-outline-info"><i class='bx bxs-edit'></i>EDITAR</a>
+                  <a href="/deleteCategoria/<%= categorias.idC %>" class="btn btn-outline-danger"><i class='bx bxs-trash-alt'>BORRAR</i></a>                                    
                 </td>
             </tr>                                   
          <% }) %>
